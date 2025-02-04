@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammet Furkan Altın - Kişisel Website</title>
+    <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/muhammetfurkanaltin" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Muhammet Furkan Altın - Personel Website</title>
     <style>
         :root {
             --primary-color: #1a1a1a;
@@ -106,6 +108,11 @@
             transform: translateY(-3px);
         }
 
+        .social-links a i {
+            margin-right: 8px;
+            font-size: 1.1em;
+        }
+
         .github-stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -133,10 +140,69 @@
         }
 
         .skill-tag {
+            background: rgba(110, 84, 148, 0.2);
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            border-radius: 15px;
+            border: 1px solid var(--accent-color);
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .skill-tag:hover {
             background: var(--accent-color);
-            padding: 0.3rem 0.8rem;
-            font-size: 0.8rem;
-            border-radius: 3px;
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 5px 15px rgba(110, 84, 148, 0.3);
+        }
+
+        .repo-item {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--accent-color);
+            transition: all 0.3s ease;
+            background: rgba(110, 84, 148, 0.05);
+        }
+
+        .repo-item:hover {
+            transform: translateX(10px);
+            background: rgba(110, 84, 148, 0.2);
+            box-shadow: -4px 4px 10px rgba(110, 84, 148, 0.2);
+        }
+
+        .repo-item h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .repo-item a {
+            position: relative;
+            color: var(--secondary-color) !important;
+            text-decoration: none;
+            padding-bottom: 2px;
+        }
+
+        .repo-item a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .repo-item a:hover::after {
+            width: 100%;
+        }
+
+        .repo-item h4 a i {
+            margin-right: 8px;
+            color: var(--accent-color);
+        }
+
+        .repo-item p {
+            font-size: 0.9rem;
+            opacity: 0.8;
         }
 
         @keyframes pulse {
@@ -153,6 +219,52 @@
                 font-size: 2rem;
             }
         }
+
+        .stat-card.about-me {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .about-me h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .about-me .bio {
+            text-align: justify;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .about-me .contact-info {
+            display: grid;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(110, 84, 148, 0.1);
+            border-radius: 8px;
+        }
+
+        .about-me .contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .about-me .contact-info p:hover {
+            transform: translateX(10px);
+            color: var(--accent-color);
+        }
+
+        .contact-info i {
+            width: 20px;
+            color: var(--accent-color);
+        }
     </style>
 </head>
 <body>
@@ -168,33 +280,61 @@
             <p>Software Developer</p>
             
             <div class="social-links">
-                <a href="https://github.com/muhammetfurkanaltin" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/muhammetfurkanaltin" target="_blank">LinkedIn</a>
+                <a href="https://github.com/muhammetfurkanaltin" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://linkedin.com/in/muhammetfurkanaltin" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
             </div>
         </header>
 
         <div class="github-stats">
-            <div class="stat-card">
-                <h3>Hakkımda</h3>
-                <p>Merhaba! Ben Muhammet Furkan Altın. Yazılım geliştirme konusunda tutkulu bir geliştiriciyim.</p>
-                <p>🌍 Türkiye</p>
-                <p>💼 Software Developer</p>
-                <p>📧 muhammetfurkanaltin@gmail.com</p>
+            <div class="stat-card about-me">
+                <h3>About me</h3>
+                <div class="bio">
+                    <p>I am a graduate of Mechatronics Technician. My software journey began with C++, and I have since expanded my skills to include Python, JavaScript, HTML, and CSS. I continuously work on improving myself and turning my knowledge into practice by developing and archiving projects on GitHub.</p>
+                    <br>
+                    <p>I am always eager to grow in the world of software and explore new technologies. You can check out my projects on my GitHub profile and feel free to reach out to me.</p>
+                </div>
+                <div class="contact-info">
+                    <p><i class="fas fa-globe"></i> Türkiye</p>
+                    <p><i class="fas fa-briefcase"></i> Software Developer</p>
+                    <p><i class="fas fa-envelope"></i> muhammetfurkanaltin@gmail.com</p>
+                </div>
             </div>
 
             <div class="stat-card">
-                <h3>Projelerim</h3>
+                <h3><i class="fas fa-code"></i> Projects</h3>
                 <div class="repo-item">
-                    <h4><a href="https://github.com/muhammetfurkanaltin/django-eshop" target="_blank" style="color: inherit; text-decoration: none;">Django Eshop</a></h4>
+                    <h4><a href="https://github.com/muhammetfurkanaltin/django-eshop" target="_blank">
+                        <i class="fas fa-code-branch"></i> Django Eshop
+                    </a></h4>
                     <p>An e-commerce website with django</p>
                 </div>
                 <div class="repo-item">
-                    <h4><a href="https://github.com/muhammetfurkanaltin/DcBOT-crypto" target="_blank" style="color: inherit; text-decoration: none;">Discord Bot</a></h4>
+                    <h4><a href="https://github.com/muhammetfurkanaltin/DcBOT-crypto" target="_blank">
+                        <i class="fab fa-discord"></i> Discord Bot
+                    </a></h4>
                     <p>Requesting a desired crypto value using a Discord bot</p>
                 </div>
                 <div class="repo-item">
-                    <h4><a href="https://github.com/muhammetfurkanaltin/Stripe-Test" target="_blank" style="color: inherit; text-decoration: none;">Stripe Payment Learn</a></h4>
+                    <h4><a href="https://github.com/muhammetfurkanaltin/Stripe-Test" target="_blank">
+                        <i class="fas fa-credit-card"></i> Stripe Payment Learn
+                    </a></h4>
                     <p>Payment method exercise using Stripe</p>
+                </div>
+                <div class="repo-item">
+                    <h4><a href="https://github.com/muhammetfurkanaltin/djangoPortfolio" target="_blank">
+                        <i class="fas fa-user"></i> Django Portfolio
+                    </a></h4>
+                    <p>Creating a portfolio site using Django</p>
+                </div>
+                <div class="repo-item">
+                    <h4><a href="https://github.com/muhammetfurkanaltin/Projects" target="_blank">
+                        <i class="fas fa-folder-open"></i> My School Projects
+                    </a></h4>
+                    <p>Projects I did at school </p>
                 </div>
             </div>
         </div>
